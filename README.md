@@ -7,9 +7,9 @@ Web3MQ-Node setup
 `Binaries on macOS, Linux`
 
 ```bash
-v=v0.1.0-beta.1; curl -LO "curl -LO "https://github.com/Generative-Labs/Web3MQ-Node-Setup/releases/download/$v/Web3MQ-Node-$(uname -s | awk '{ print tolower($0) }')-x64-$v.zip"
+v=v0.1.0-beta.2; curl -LO "curl -LO "https://github.com/Generative-Labs/Web3MQ-Node-Setup/releases/download/$v/Web3MQ-Node-$(uname -s | awk '{ print tolower($0) }')-x64-$v.zip"
 
-v=v0.1.0-beta.1; unzip Web3MQ-Node-*-$v.zip
+v=v0.1.0-beta.2; unzip Web3MQ-Node-*-$v.zip
 ```
 
 ### QuickStart
@@ -40,13 +40,24 @@ v=v0.1.0-beta.1; unzip Web3MQ-Node-*-$v.zip
   dbuser = ""
 
 [web3mq]
-  bootnodes = []
+  bootnodes = [
+    "/ip4/35.79.142.79/tcp/60001/p2p/12D3KooWAxLmzfTLj2oS7X9DV1fC35E5qSMXiJP5xcM2NpvHMTwZ",
+    "/ip4/18.140.146.199/tcp/60001/p2p/12D3KooWRsdkMk4ick1NnGQmHB4FAu7EVHQ1yrvG3s1zVdTyVVXP",
+    "/ip4/52.36.178.129/tcp/60001/p2p/12D3KooWAM36rSzAmJjDV8XoMa59wNzvbdaKjM2NK8acKTe5TSFk"
+  ]
   dbpath = "./store.db"
   keyfile = "./nodekey"
   p2p-port = 60001
   server-port = 23333
   usedb = true
 ```
+
+`bootnodes array list`
+
+- /ip4/35.79.142.79/tcp/60001/p2p/12D3KooWAxLmzfTLj2oS7X9DV1fC35E5qSMXiJP5xcM2NpvHMTwZ
+- /ip4/18.140.146.199/tcp/60001/p2p/12D3KooWRsdkMk4ick1NnGQmHB4FAu7EVHQ1yrvG3s1zVdTyVVXP
+- /ip4/52.36.178.129/tcp/60001/p2p/12D3KooWAM36rSzAmJjDV8XoMa59wNzvbdaKjM2NK8acKTe5TSFk
+
 
 ### Config Options description
 
