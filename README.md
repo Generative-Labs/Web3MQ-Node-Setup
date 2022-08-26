@@ -17,7 +17,8 @@ v=v0.1.0-beta.1; unzip Web3MQ-Node-*-$v.zip
 `init`
 
 ```bash
-./Web3MQ --init
+# server port default is 80, you can change when init
+./Web3MQ --init --server-port=23333
 ```
 
 `This command include several actions`
@@ -26,6 +27,32 @@ v=v0.1.0-beta.1; unzip Web3MQ-Node-*-$v.zip
 - Generate config.toml `You can change config file settings`
 - Init DataBase `Default is SQLite`
     - We recommend running with a PostgreSQL database, you can change settings in config.toml
+
+`config.toml example`
+
+```toml
+[web3db]
+  dbdriver = "sqlite"
+  dbhost = "127.0.0.1"
+  dbname = "Web3MQ"
+  dbpassword = ""
+  dbport = 0
+  dbuser = ""
+
+[web3mq]
+  bootnodes = []
+  dbpath = "./store.db"
+  keyfile = "./nodekey"
+  p2p-port = 60001
+  server-port = 23333
+  usedb = true
+```
+
+### Config Options description
+
+- dbdriver // Support   sqlite(default) / mysql / postgres
+- bootnodes default bootstrap nodes string array
+
 
 `Run with config.toml`
 
@@ -36,6 +63,11 @@ v=v0.1.0-beta.1; unzip Web3MQ-Node-*-$v.zip
 
 ## Docker and Docker Compose
 
+*Create a volume*
+
+```bash
+docker volume create --name=Web3MQStorage
+```
 
 `docker-compose.yml`
 
@@ -60,7 +92,7 @@ volumes:
     external: true
 ```
 
-`Run cmd docker-compose up -d`
+`Run with docker-compose`
 
 ```bash
 docker-compose up -d
