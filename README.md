@@ -7,9 +7,9 @@ Web3MQ-Node setup
 `Binaries on macOS, Linux`
 
 ```bash
-v=v0.1.0-beta.2; curl -LO "curl -LO "https://github.com/Generative-Labs/Web3MQ-Node-Setup/releases/download/$v/Web3MQ-Node-$(uname -s | awk '{ print tolower($0) }')-x64-$v.zip"
+v=v0.1.0-beta.17; curl -LO "curl -LO "https://github.com/Generative-Labs/Web3MQ-Node-Setup/releases/download/$v/Web3MQ-Node-$(uname -s | awk '{ print tolower($0) }')-x64-$v.zip"
 
-v=v0.1.0-beta.2; unzip Web3MQ-Node-*-$v.zip
+v=v0.1.0-beta.17; unzip Web3MQ-Node-*-$v.zip
 ```
 
 ### QuickStart
@@ -41,9 +41,12 @@ v=v0.1.0-beta.2; unzip Web3MQ-Node-*-$v.zip
 
 [web3mq]
   bootnodes = [
-    "/ip4/35.79.142.79/tcp/60001/p2p/12D3KooWAxLmzfTLj2oS7X9DV1fC35E5qSMXiJP5xcM2NpvHMTwZ",
-    "/ip4/18.140.146.199/tcp/60001/p2p/12D3KooWRsdkMk4ick1NnGQmHB4FAu7EVHQ1yrvG3s1zVdTyVVXP",
-    "/ip4/52.36.178.129/tcp/60001/p2p/12D3KooWAM36rSzAmJjDV8XoMa59wNzvbdaKjM2NK8acKTe5TSFk"
+    "/ip4/52.77.28.6/tcp/60001/p2p/12D3KooWPxmYK6KzJ8dwuajbuJqB6yehZtrKd9x6PUZqBUkBKURc",
+    "/ip4/18.138.163.201/tcp/60001/p2p/12D3KooWLgy8KE8gnX5a1HDMQKvVDWNf9tHgEbXRR5dYKsRjLKiJ",
+    "/ip4/43.206.60.74/tcp/60001/p2p/12D3KooWLMnxXFoPzxTwRVjMC5griMdhud1hjLoUYK4cZta8oj9a",
+    "/ip4/35.72.119.186/tcp/60001/p2p/12D3KooWBUKCX9K45HyJgMnmpqkdRkLHRB1BLktsNDvcD2H5EeEL",
+    "/ip4/54.193.102.217/tcp/60001/p2p/12D3KooWKHnk31i1VbsXfGYukL24Bbu6FuihVBd2goAYGyp29iUN",
+    "/ip4/54.215.25.183/tcp/60001/p2p/12D3KooWCKJZSyVio4P43QstzxA2L22Svz4icqGdgCtFgR8wdLd1"
   ]
   dbpath = "./store.db"
   keyfile = "./nodekey"
@@ -54,10 +57,12 @@ v=v0.1.0-beta.2; unzip Web3MQ-Node-*-$v.zip
 
 `bootnodes array list`
 
-- /ip4/35.79.142.79/tcp/60001/p2p/12D3KooWAxLmzfTLj2oS7X9DV1fC35E5qSMXiJP5xcM2NpvHMTwZ
-- /ip4/18.140.146.199/tcp/60001/p2p/12D3KooWRsdkMk4ick1NnGQmHB4FAu7EVHQ1yrvG3s1zVdTyVVXP
-- /ip4/52.36.178.129/tcp/60001/p2p/12D3KooWAM36rSzAmJjDV8XoMa59wNzvbdaKjM2NK8acKTe5TSFk
-
+- /ip4/52.77.28.6/tcp/60001/p2p/12D3KooWPxmYK6KzJ8dwuajbuJqB6yehZtrKd9x6PUZqBUkBKURc
+- /ip4/18.138.163.201/tcp/60001/p2p/12D3KooWLgy8KE8gnX5a1HDMQKvVDWNf9tHgEbXRR5dYKsRjLKiJ
+- /ip4/43.206.60.74/tcp/60001/p2p/12D3KooWLMnxXFoPzxTwRVjMC5griMdhud1hjLoUYK4cZta8oj9a
+- /ip4/35.72.119.186/tcp/60001/p2p/12D3KooWBUKCX9K45HyJgMnmpqkdRkLHRB1BLktsNDvcD2H5EeEL
+- /ip4/54.193.102.217/tcp/60001/p2p/12D3KooWKHnk31i1VbsXfGYukL24Bbu6FuihVBd2goAYGyp29iUN
+- /ip4/54.215.25.183/tcp/60001/p2p/12D3KooWCKJZSyVio4P43QstzxA2L22Svz4icqGdgCtFgR8wdLd1
 
 ### Config Options description
 
@@ -69,42 +74,4 @@ v=v0.1.0-beta.2; unzip Web3MQ-Node-*-$v.zip
 
 ```bash
 ./Web3MQ --config-file=config.toml
-```
-
-
-## Docker and Docker Compose
-
-*Create a volume*
-
-```bash
-docker volume create --name=Web3MQStorage
-```
-
-`docker-compose.yml`
-
-```yaml
-version: '3.7'
-services:
-    web3mq:
-      container_name: web3mq
-      image: web3mq:v0.1.0-beta
-      tty: true
-      stdin_open: true
-      working_dir: /app
-      ports:
-        - '23333:80/tcp'
-        - '60001:60001/tcp'
-        - '8090:8090/tcp'
-      volumes:
-        - Web3MQStorage:/app
-
-volumes:
-  Web3MQStorage:
-    external: true
-```
-
-`Run with docker-compose`
-
-```bash
-docker-compose up -d
 ```
