@@ -53,6 +53,17 @@ v=v0.1.0-beta.17; unzip Web3MQ-Node-*-$v.zip
   p2p-port = 60001
   server-port = 23333
   usedb = true
+  https-endpoint = ""
+```
+
+`Important`
+
+> Write your domain in https-endpoint
+
+*example*
+
+```bash
+https-endpoint = "https://yourdomain.com"
 ```
 
 `bootnodes array list`
