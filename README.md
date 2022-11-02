@@ -7,7 +7,7 @@ Web3MQ-Node setup
 `Binaries on macOS, Linux`
 
 ```bash
-curl -LO "https://github.com/Generative-Labs/Web3MQ-Node-Setup/releases/download/latest/Web3MQ-Node-$(uname -s | awk '{ print tolower($0) }')-x64.zip"
+curl -LO "https://github.com/Generative-Labs/Web3MQ-Node-Setup/releases/latest/download/Web3MQ-Node-$(uname -s | awk '{ print tolower($0) }')-x64.zip"
 
 unzip Web3MQ-Node-*.zip
 ```
