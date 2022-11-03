@@ -59,7 +59,7 @@ unzip Web3MQ-Node-*.zip
 
 `Important`
 
-> Write your domain in https-endpoint
+> Write your domain in https-endpoint and
 > Write your testnet devkey in testnet-devkey
 
 *example*
