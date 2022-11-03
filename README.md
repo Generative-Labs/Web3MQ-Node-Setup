@@ -54,16 +54,19 @@ unzip Web3MQ-Node-*.zip
   server-port = 23333
   usedb = true
   https-endpoint = ""
+  testnet-devkey = ""
 ```
 
 `Important`
 
 > Write your domain in https-endpoint
+> Write your testnet devkey in testnet-devkey
 
 *example*
 
 ```bash
 https-endpoint = "https://yourdomain.com"
+testnet-devkey = "testnet devkey"
 ```
 
 `bootnodes array list`
