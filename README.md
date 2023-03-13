@@ -89,3 +89,10 @@ testnet-devkey = "testnet devkey"
 ```bash
 ./Web3MQ --config-file=config.toml
 ```
+
+`Run in background`
+```bash
+nohup ./Web3MQ --config-file=config.toml &
+```
+
+
