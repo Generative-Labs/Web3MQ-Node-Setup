@@ -104,5 +104,6 @@ nohup ./Web3MQ --config-file=config.toml &
 ./Web3MQ --config-file=config.toml --node-signing-payload <your did key>
 
 # for example
+# did_type is eth and did_value is your wallet address
 ./Web3MQ --config-file=config.toml --node-signing-payload eth:0xasdfasdf
 ```
