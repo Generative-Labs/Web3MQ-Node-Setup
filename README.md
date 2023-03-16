@@ -95,6 +95,11 @@ testnet-devkey = "testnet devkey"
 nohup ./Web3MQ --config-file=config.toml &
 ```
 
+`View log`
+
+```bash
+tail -f Web3MQ.log
+```
 
 ### Generate Node Signature
 
