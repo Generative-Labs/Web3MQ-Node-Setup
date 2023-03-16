@@ -96,3 +96,13 @@ nohup ./Web3MQ --config-file=config.toml &
 ```
 
 
+### Generate Node Signature
+
+```bash
+# did key includes two parts  did_type and did_value
+
+./Web3MQ --config-file=config.toml --node-signing-payload <your did key>
+
+# for example
+./Web3MQ --config-file=config.toml --node-signing-payload eth:0xasdfasdf
+```
